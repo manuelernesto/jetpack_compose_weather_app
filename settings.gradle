@@ -1,0 +1,2 @@
+rootProject.name = "jetpack_compose_weather_app"
+include ':app'
