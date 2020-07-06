@@ -14,6 +14,7 @@ import androidx.ui.material.Scaffold
 import androidx.ui.material.TopAppBar
 import androidx.ui.res.imageResource
 import androidx.ui.res.vectorResource
+import androidx.ui.text.style.TextAlign
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.TextUnit
 import androidx.ui.unit.dp
@@ -38,10 +39,15 @@ fun App() {
         topAppBar = {
             TopAppBar(
                 elevation = 0.dp,
-                title = { Text(text = "") },
+                title = { Text(text = "COMPOSE WEATHER UI") },
                 navigationIcon = {
                     IconButton(onClick = {  }) {
                         Icon(vectorResource(R.drawable.ic_menu))
+                    }
+                },
+                actions = {
+                    IconButton(onClick = {  }) {
+                        Icon(vectorResource(R.drawable.ic_settings))
                     }
                 }
             )
