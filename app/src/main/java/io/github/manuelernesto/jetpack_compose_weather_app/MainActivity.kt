@@ -42,12 +42,12 @@ fun App() {
                 title = { Text(text = "COMPOSE WEATHER UI") },
                 navigationIcon = {
                     IconButton(onClick = {  }) {
-                        Icon(vectorResource(R.drawable.ic_menu))
+                        Icon(imageResource(R.drawable.menu))
                     }
                 },
                 actions = {
                     IconButton(onClick = {  }) {
-                        Icon(vectorResource(R.drawable.ic_settings))
+                        Icon(imageResource(R.drawable.settings))
                     }
                 }
             )
