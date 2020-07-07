@@ -11,6 +11,7 @@ import androidx.ui.layout.*
 import androidx.ui.material.IconButton
 import androidx.ui.material.Scaffold
 import androidx.ui.material.TopAppBar
+import androidx.ui.res.colorResource
 import androidx.ui.res.imageResource
 import androidx.ui.res.stringResource
 import androidx.ui.tooling.preview.Preview
@@ -32,30 +33,31 @@ class MainActivity : AppCompatActivity() {
 }
 
 @Composable
-fun App() {
+fun App(weatherInfo: WeatherInfo = listWeatherInfo[1]) {
     Scaffold(
         topAppBar = {
             TopAppBar(
+                backgroundColor = colorResource(weatherInfo.color),
                 elevation = 0.dp,
                 title = { Text(text = "") },
                 navigationIcon = {
                     IconButton(onClick = { }) {
-                        Icon(imageResource(R.drawable.menu))
+                        Icon(imageResource(R.drawable.menu), tint = Color.White)
                     }
                 },
                 actions = {
                     IconButton(onClick = { }) {
-                        Icon(imageResource(R.drawable.settings))
+                        Icon(imageResource(R.drawable.settings), tint = Color.White)
                     }
                 }
             )
         },
-        bodyContent = { MainScreen() }
+        bodyContent = { MainScreen(weatherInfo) }
     )
 }
 
 @Composable
-fun MainScreen(weatherInfo: WeatherInfo = listWeatherInfo[2]) {
+fun MainScreen(weatherInfo: WeatherInfo) {
     VerticalScroller {
         ConstraintLayout(constraintSet = ConstraintSet {
             tag("WeatherBgImage").apply {

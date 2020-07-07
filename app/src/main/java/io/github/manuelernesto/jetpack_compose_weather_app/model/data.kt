@@ -12,7 +12,8 @@ data class WeatherInfo(
     @StringRes val data: Int,
     @DrawableRes val bgEffect: Int,
     @DrawableRes val bgCity: Int,
-    @DrawableRes val bgColor: Int
+    @DrawableRes val bgColor: Int,
+    @DrawableRes val color: Int
 )
 
 val listWeatherInfo = listOf(
@@ -23,7 +24,8 @@ val listWeatherInfo = listOf(
         R.string.data_ny,
         R.drawable.snow_efect,
         R.drawable.empire_state_building,
-        R.drawable.snowy_bg
+        R.drawable.snowy_bg,
+        R.color.color_ny
     ),
     WeatherInfo(
         R.string.city_paris,
@@ -32,15 +34,17 @@ val listWeatherInfo = listOf(
         R.string.data_paris,
         R.drawable.sunny_bg,
         R.drawable.empire_state_building,
-        R.drawable.sunny_bg
-    ),WeatherInfo(
+        R.drawable.sunny_bg,
+        R.color.color_paris
+    ), WeatherInfo(
         R.string.city_sf,
         R.string.temp_sf,
         R.string.state_clear,
         R.string.data_sf,
         R.drawable.clear_bg,
         R.drawable.golden_gate_bridge,
-        R.drawable.clear_bg
+        R.drawable.clear_bg,
+        R.color.color_sf
     )
 )
 
