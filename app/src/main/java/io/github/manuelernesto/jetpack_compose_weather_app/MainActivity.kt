@@ -39,7 +39,7 @@ fun App() {
         topAppBar = {
             TopAppBar(
                 elevation = 0.dp,
-                title = { Text(text = "COMPOSE WEATHER UI") },
+                title = { Text(text = "") },
                 navigationIcon = {
                     IconButton(onClick = {  }) {
                         Icon(imageResource(R.drawable.menu))
@@ -126,7 +126,7 @@ fun MainScreen() {
                 modifier = Modifier.tag("WeatherLocation")
                     .padding(16.dp)
             )
-            DrawBackground(R.drawable.clear_efect, modifier = Modifier.tag("WeatherEfect"))
+            DrawBackground(R.drawable.snow_efect, modifier = Modifier.tag("WeatherEfect"))
             DrawBackground(R.drawable.empire_state_building, modifier = Modifier.tag("WeatherIcon"))
 
             Title(
@@ -196,6 +196,12 @@ fun MainScreen() {
     }
 }
 
+
+
+
+
+
+
 @Composable
 fun DrawBackground(img: Int, modifier: Modifier) {
     val image = imageResource(id = img)
@@ -205,7 +211,6 @@ fun DrawBackground(img: Int, modifier: Modifier) {
         modifier = modifier
     )
 }
-
 
 @Composable
 fun Title(txt: String, size: TextUnit, modifier: Modifier) {

@@ -33,8 +33,8 @@ data class CurrentWeather(
 )
 
 
-val temp = Temperature(8)
-val forecast = WeatherForecast(temp, temp, WeatherState.SUNNY)
-val curWeather = CurrentWeather("SAN FRANCISCO", temp, forecast = forecast)
+val temp = Temperature(3)
+val forecast = WeatherForecast(temp, temp, WeatherState.SNOWY)
+val curWeather = CurrentWeather("NEW YORK", temp, forecast = forecast)
 
 
