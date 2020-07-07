@@ -1,7 +1,6 @@
 package io.github.manuelernesto.jetpack_compose_weather_app
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.ui.core.*
@@ -13,12 +12,12 @@ import androidx.ui.material.IconButton
 import androidx.ui.material.Scaffold
 import androidx.ui.material.TopAppBar
 import androidx.ui.res.imageResource
-import androidx.ui.res.vectorResource
-import androidx.ui.text.style.TextAlign
+import androidx.ui.res.stringResource
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.TextUnit
 import androidx.ui.unit.dp
-import io.github.manuelernesto.composeapp.model.curWeather
+import io.github.manuelernesto.composeapp.model.WeatherInfo
+import io.github.manuelernesto.composeapp.model.listWeatherInfo
 import io.github.manuelernesto.jetpack_compose_weather_app.ui.Weather_appTheme
 
 class MainActivity : AppCompatActivity() {
@@ -40,12 +39,12 @@ fun App() {
                 elevation = 0.dp,
                 title = { Text(text = "") },
                 navigationIcon = {
-                    IconButton(onClick = {  }) {
+                    IconButton(onClick = { }) {
                         Icon(imageResource(R.drawable.menu))
                     }
                 },
                 actions = {
-                    IconButton(onClick = {  }) {
+                    IconButton(onClick = { }) {
                         Icon(imageResource(R.drawable.settings))
                     }
                 }
@@ -56,7 +55,7 @@ fun App() {
 }
 
 @Composable
-fun MainScreen() {
+fun MainScreen(weatherInfo: WeatherInfo = listWeatherInfo[2]) {
     VerticalScroller {
         ConstraintLayout(constraintSet = ConstraintSet {
             tag("WeatherBgImage").apply {
@@ -116,11 +115,11 @@ fun MainScreen() {
         })
         {
             DrawBackground(
-                R.drawable.clear_bg,
+                weatherInfo.bgColor,
                 modifier = Modifier.tag("WeatherBgImage").fillMaxSize()
             )
             Title(
-                txt = curWeather.locationName,
+                txt = stringResource(id = weatherInfo.city),
                 size = TextUnit.Companion.Sp(25),
                 modifier = Modifier.tag("WeatherLocation")
                     .padding(16.dp)
@@ -129,7 +128,7 @@ fun MainScreen() {
             DrawBackground(R.drawable.empire_state_building, modifier = Modifier.tag("WeatherIcon"))
 
             Title(
-                txt = curWeather.currentTemperature.celcius.toString(),
+                txt = stringResource(id = weatherInfo.temperature),
                 size = TextUnit.Companion.Sp(80),
                 modifier = Modifier.tag("WeatherTemp")
             )
@@ -140,14 +139,14 @@ fun MainScreen() {
             )
 
             Title(
-                txt = curWeather.forecast.state.name,
+                txt = stringResource(id = weatherInfo.forecast),
                 size = TextUnit.Companion.Sp(20),
                 modifier = Modifier.tag("WeatherStatus")
                     .padding(8.dp)
             )
 
             Title(
-                txt = "Monday, 6 July 2020",
+                txt = stringResource(id = weatherInfo.data),
                 size = TextUnit.Companion.Sp(18),
                 modifier = Modifier.tag("weatherDate")
                     .padding(8.dp)

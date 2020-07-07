@@ -4,4 +4,18 @@
     <string name="state_sunny">Sunny</string>
     <string name="state_clear">Clear</string>
     <string name="state_snowy">Snowy</string>
+
+    <string name="city_ny">NEW YORK</string>
+    <string name="city_paris">PARIS</string>
+    <string name="city_sf">SAN FRANCISCO</string>
+
+
+    <string name="temp_ny">3</string>
+    <string name="temp_paris">10</string>
+    <string name="temp_sf">8</string>
+
+
+    <string name="data_ny">TUESDAY, JANUARY 16</string>
+    <string name="data_paris">WEDNESDAY, January 17</string>
+    <string name="data_sf">THURSDAY, JANUARY 18</string>
 </resources>
