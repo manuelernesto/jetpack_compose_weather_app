@@ -32,7 +32,7 @@ val listWeatherInfo = listOf(
         R.string.temp_paris,
         R.string.state_sunny,
         R.string.data_paris,
-        R.drawable.sunny_bg,
+        R.drawable.sun_reflect,
         R.drawable.empire_state_building,
         R.drawable.sunny_bg,
         R.color.color_paris
