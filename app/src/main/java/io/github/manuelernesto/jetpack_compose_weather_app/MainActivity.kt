@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-
 @Composable
 fun App() {
     Scaffold(
@@ -164,7 +163,7 @@ fun MainScreen() {
 
                 Row(modifier = Modifier.padding(8.dp)) {
 
-                    repeat(20) {
+                    repeat(10) {
 
                         image =
                             if (it % 2 == 0) imageResource(id = R.drawable.ic_cloud) else imageResource(
@@ -195,12 +194,6 @@ fun MainScreen() {
         }
     }
 }
-
-
-
-
-
-
 
 @Composable
 fun DrawBackground(img: Int, modifier: Modifier) {

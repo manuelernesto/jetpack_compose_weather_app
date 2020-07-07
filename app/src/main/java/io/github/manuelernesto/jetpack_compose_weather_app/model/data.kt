@@ -6,30 +6,29 @@ import io.github.manuelernesto.jetpack_compose_weather_app.R
 
 
 class Temperature(
-        val celcius: Int
+    val celcius: Int
 )
 
 enum class WeatherState(
-        @DrawableRes val iconID: Int,
-        @StringRes val descriptionID: Int
+    @DrawableRes val iconID: Int,
+    @StringRes val descriptionID: Int
 ) {
     SUNNY(R.drawable.snowy_bg, R.string.state_sunny),
-    RAINY(R.drawable.snowy_bg, R.string.state_rainy),
-    PARTLY_CLOUDY(R.drawable.snowy_bg, R.string.state_p_cloudy),
+    CLEAR(R.drawable.snowy_bg, R.string.state_clear),
     SNOWY(R.drawable.snowy_bg, R.string.state_snowy)
 
 }
 
 data class WeatherForecast(
-        val maxTemperature: Temperature,
-        val minTemperature: Temperature,
-        val state: WeatherState
+    val maxTemperature: Temperature,
+    val minTemperature: Temperature,
+    val state: WeatherState
 )
 
 data class CurrentWeather(
-        val locationName: String,
-        val currentTemperature: Temperature,
-        val forecast: WeatherForecast
+    val locationName: String,
+    val currentTemperature: Temperature,
+    val forecast: WeatherForecast
 )
 
 

@@ -2,7 +2,6 @@
     <string name="app_name">Weather App</string>
 
     <string name="state_sunny">Sunny</string>
-    <string name="state_rainy">Rainy</string>
-    <string name="state_p_cloudy">Partly Cloudy</string>
+    <string name="state_clear">Clear</string>
     <string name="state_snowy">Snowy</string>
 </resources>
